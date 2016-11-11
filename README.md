@@ -4,18 +4,20 @@ Cookbooks and Packer config to create a workstation for use during Habitat train
 
 ## Current Amazon Machine Image IDs
 
-AMIs are currently only available in `us-east` region.
+Listing AMIs for us-east-1 and eu-west-1
 
-Name|AMI ID
-----|------
-Introduction to Habitat Workstation - RedHat 7|ami-faac8bed
-Introduction to Habitat Workstation - Ubuntu 14.04|ami-a62c6cb1
-Introduction to Habitat Workstation - Ubuntu 16.04|ami-fdf7b7ea
-Habitat Workstation - RedHat 7 - with hab 0.11.0 installed|ami-6bad8a7c
-Habitat Workstation - Ubuntu 14.04 - with hab 0.11.0 installed|ami-47d5f250
-Habitat Workstation - Ubuntu 16.04 - with hab 0.11.0 installed|ami-ccfadddb
+Name|us-east-1|eu-west-1
+----|---------|---------
+Introduction to Habitat Workstation - RedHat 7|ami-faac8bed|ami-3ad68049
+Introduction to Habitat Workstation - Ubuntu 14.04|ami-a62c6cb1|ami-3837664b
+Introduction to Habitat Workstation - Ubuntu 16.04|ami-fdf7b7ea|ami-cd3a6bbe
+Habitat Workstation - RedHat 7 - with hab 0.11.0 installed|ami-6bad8a7c|ami-a83968db
+Habitat Workstation - Ubuntu 14.04 - with hab 0.11.0 installed|ami-47d5f250|ami-463b6a35
+Habitat Workstation - Ubuntu 16.04 - with hab 0.11.0 installed|ami-ccfadddb|ami-453b6a36
 
 ## Build the Amazon Machine Images (AMIs)
+
+not currently supported for eu-west-1
 
 ### Without Habitat installed
 
@@ -64,6 +66,14 @@ e.g.
 $ export AMI_ID=the_ami_id_generated_by_packer
 $ build_habitat_workstations.sh 20 "Surge Conf 2016" "Community Engineering" "Nathen Harvey" "Surge" "2016-09-23"
 ```
+
+For EU:
+```
+$ export AMI_ID=the_ami_id_generated_by_packer
+$ build_habitat_workstations_eu.sh [number] [name] [department] [contact] [project] [termination-date]
+```
+
+
 
 ## List Workstations for a Classroom
 
